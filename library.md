@@ -1,6 +1,9 @@
+---
+layout: default
+---
 ## The Library
 
-![Image]("images/perrot-ycc.png")
+![Image](images/perrot-ycc.png "YCC Homepage")
 
 **W**hen I was little, in the days before I was even tall enough to reach a computer, I used to read. A lot. It didn’t matter what it was, I would read just about anything and everything I could get my hands on. I was drawn in by that alluring, magical world of reading, which forced me to stimulate the very extremes of my imagination. Apparently it was so extreme that my kindergarten teacher actually let me read to the class one day (although whether she did so more to get a break, I never did find out…). Fast-forward a couple of years to the day when two local librarians from the Perrot Library came to visit, Mrs. Mac and Mrs. K. They came to advertise a program specifically for elementary school students: Y2C2, the Young Young Critics’ Club (“Young” was used twice in the name because there was another program for middle school students, dubbed Young Critics’ Club). This weekly program gave a select group of elementary school students the opportunity to read and rate all genres of books for the age group, before they were published. Upon hearing this, I was immediately hooked, barely believing that I had met these seemingly goddesses reincarnated. I came home that afternoon, begging my mom to take me to the library so I could schedule an interview (and I thought the college admissions process was hard!). I completed an application (questions such as “what is your favorite genre?” really separated the men from the boys back then) and interviewed with the two librarians. A day later, my mom got a phone call from Mrs. Mac saying that I had been accepted. The first meeting was the following Friday; I could hardly wait.</p>
 
