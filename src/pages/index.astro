@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="home">
+    <h1>Curren Iyer</h1>
+
+    <div class="bio">
+      <p>Hi, I'm Curren. I'm from Greenwich, CT and currently live in San Francisco.</p>
+
+      <p>I'm on the Product Strategy team at <a href="https://www.netflix.com" target="_blank" rel="noopener">Netflix</a>, focused on GenAI projects for content production. Prior to Netflix, I was on the Product/AI Ops team at <a href="https://www.ramp.com" target="_blank" rel="noopener">Ramp</a> in NYC. Throughout my career I've enjoyed working at the intersection of technical and GTM teams across different org sizes and verticals — my experience spans SaaS, media, fintech, and some deeptech domains like space and robotics.</p>
+
+      <p>On the personal front, I enjoy running, going to concerts, and volunteering. For 2026 I'm working on a few goals:</p>
+
+      <ol>
+        <li>Build a sustainable fitness regimen for the NYC marathon in November. Hit me up on <a href="https://www.strava.com/athletes/14050464" target="_blank" rel="noopener">Strava</a>.</li>
+        <li>Allocate time for experimentation, ranging from learning guitar to building side projects.</li>
+        <li>Commit to writing more, at least quarterly.</li>
+      </ol>
+    </div>
+
+    <div class="links">
+      <a href="https://www.linkedin.com/in/curren-iyer/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">·</span>
+      <a href="https://x.com/curreniyer" target="_blank" rel="noopener">Twitter</a>
+      <span class="sep">·</span>
+      <a href="mailto:curren.iyer@gmail.com">Email</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .home {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    color: #1e3a5f;
+  }
+
+  .bio {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .bio p, .bio ol {
+    line-height: 1.75;
+    color: #4a4640;
+  }
+
+  .bio ol {
+    padding-left: 1.4em;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    padding-top: 4px;
+  }
+
+  .sep {
+    color: #c4bdb5;
+  }
+</style>

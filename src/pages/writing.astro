@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pieces = [
+  {
+    title: "The Library",
+    url: "/writing/library",
+    date: "2014",
+    description: "A personal essay about reading, loss, and the librarians who shaped me growing up in Greenwich, CT.",
+    external: false,
+  },
+];
+---
+
+<Layout title="Writing">
+  <div class="writing">
+    <h2>Writing</h2>
+
+    <ul>
+      {pieces.map((piece) => (
+        <li>
+          <a href={piece.url} target={piece.external ? "_blank" : undefined} rel={piece.external ? "noopener" : undefined}>
+            {piece.title}
+          </a>
+          <span class="meta">{piece.date}</span>
+          {piece.description && <p class="desc">{piece.description}</p>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</Layout>
+
+<style>
+  .writing {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  li a {
+    font-size: 1rem;
+  }
+
+  .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: #8a8077;
+  }
+
+  .desc {
+    font-size: 0.93rem;
+    color: #4a4640;
+    line-height: 1.6;
+    margin-top: 2px;
+  }
+</style>
