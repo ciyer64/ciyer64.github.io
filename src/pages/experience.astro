@@ -61,12 +61,15 @@ const jobs = [
     <ul>
       {jobs.map((job) => (
         <li>
-          <div class="header">
-            <span class="company">{job.company}</span>
-          </div>
-          <div class="meta">
-            <span class="role">{job.role}</span>
-            <span class="dates">{job.dates} · {job.location}</span>
+          <div class="job-header">
+            <div class="job-meta">
+              <span class="company">{job.company}</span>
+              <span class="role">{job.role}</span>
+            </div>
+            <div class="job-right">
+              <span class="dates">{job.dates}</span>
+              <span class="location">{job.location}</span>
+            </div>
           </div>
           {job.blurbHtml
             ? <p class="blurb" set:html={job.blurbHtml} />
@@ -100,13 +103,20 @@ const jobs = [
   li {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 0;
   }
 
-  .header {
+  .job-header {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .job-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
 
   .company {
@@ -115,33 +125,30 @@ const jobs = [
     color: #1e3a5f;
   }
 
-  .tag {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #8a8077;
-    border: 1px solid #d6cfc6;
-    border-radius: 3px;
-    padding: 1px 6px;
-  }
-
-  .meta {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-  }
-
   .role {
     font-size: 0.95rem;
     color: #2c2a27;
+  }
+
+  .location {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: #8a8077;
+  }
+
+  .job-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    flex-shrink: 0;
   }
 
   .dates {
     font-family: 'Inter', sans-serif;
     font-size: 0.82rem;
     color: #8a8077;
+    white-space: nowrap;
   }
 
   .blurb {
@@ -149,5 +156,12 @@ const jobs = [
     font-size: 0.93rem;
     color: #4a4640;
     line-height: 1.75;
+  }
+
+  @media (max-width: 600px) {
+    .job-header {
+      flex-direction: column-reverse;
+      gap: 2px;
+    }
   }
 </style>
