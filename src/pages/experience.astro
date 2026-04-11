@@ -7,72 +7,49 @@ const jobs = [
     role: "Product Strategy",
     dates: "2025 – present",
     location: "San Francisco, CA",
-    bullets: [
-      "Leading product strategy for GenAI initiatives applied to content production, working at the intersection of AI research and editorial workflows.",
-    ],
+    blurbHtml: `Advising senior engineering, product, and content leadership on GenAI strategy for content production, spanning first-party workflows and third-party vendor solutions. Contributed to Netflix's acquisition of <a href="https://about.netflix.com/en/news/why-interpositive-is-joining-netflix" target="_blank" rel="noopener">InterPositive</a>, a studio technology company co-founded by Ben Affleck.`,
   },
   {
     company: "Ramp",
     role: "Senior Product Operations Manager",
     dates: "2024 – 2025",
     location: "New York, NY",
-    bullets: [
-      "Product Strategy: Led initiative targeting enterprise IT personas to expedite adoption among large enterprises, hitting spend milestones 20% faster and mitigating $5M in fraudulent account takeovers.",
-      "Release Management: Led platform migration across 10+ engineering teams to support new compliance workflows, then owned sales enablement to ensure a successful launch.",
-      "Data Analysis: Conducted root cause analysis on customer support tickets and shipped in-app self-service workflows, reducing support ticket volume by 20% MoM.",
-    ],
+    blurbHtml: `Generalist role on Ramp's identity and enterprise platform pod, spanning product, data science, and marketing. Expanded access to the IT admin role across all customer plans after identifying it reduced fraudulent account takeover risk and accelerated spend milestones by 20%. Led user research and GTM for the launch of <a href="https://ramp.com/blog/governance-that-runs-itself" target="_blank" rel="noopener">custom roles and permissions</a> for enterprise compliance, requiring a permissions framework migration across 10+ engineering teams. Shipped in-app self-service workflows from support ticket root cause analysis, meaningfully reducing support ticket volume. Served as product SME for monthly NPS reporting, building GenAI-based summaries using the GPT and Claude APIs to surface root causes of monthly variance.`,
   },
   {
     company: "General Catalyst",
     role: "Venture Capital MBA Intern",
     dates: "Spring 2024",
     location: "Boston, MA",
-    bullets: [
-      "Published research on enterprise Generative AI adoption based on 20+ interviews with tech leaders and enterprise buyers, under Partner Deep Nishar.",
-    ],
+    blurbHtml: `Published a research report on enterprise GenAI adoption in partnership with <a href="https://www.generalcatalyst.com/stories/welcome-deep-nishar-to-general-catalyst" target="_blank" rel="noopener">Deep Nishar</a>, based on interviews with 20+ software leaders and enterprise buyers. <a href="https://medium.com/@curren.iyer/gen-ai-the-open-source-opportunity-c23bc63f5ae5" target="_blank" rel="noopener">Read the report here.</a>`,
   },
   {
     company: "SpaceX — Starlink",
     role: "Business Operations MBA Intern",
     dates: "Summer 2023",
     location: "Los Angeles, CA",
-    bullets: [
-      "GTM Strategy: Redesigned go-to-market strategy for the Starlink Business offering by prioritizing the top three segments by NPS and market size, identifying target customers, and selecting optimal channels.",
-      "New Market Launch: Built India market entry plan through prospective user interviews, expert research, and SQL-based pricing analysis of historical usage and customer feedback.",
-      "A/B Experimentation: Led testing to identify churn drivers among travel plan customers; applied segmentation by price sensitivity and purchasing behavior to improve retention.",
-    ],
+    blurb: "MBA intern on the Product Growth team within Starlink Business Operations. Redesigned the GTM strategy for Starlink Business by prioritizing top segments by NPS and market size, selecting target customers and optimal channels. Proposed a new market entry plan for India and Africa through user interviews, expert research, and SQL-based pricing analysis.",
   },
   {
     company: "Warp",
     role: "Product Manager Pre-MBA Intern",
     dates: "Summer 2022",
     location: "New York, NY",
-    bullets: [
-      "Roadmap Ownership: Established the company's first sprint planning program to systematically prioritize a backlog of 300+ feature requests, contributing to a 30% increase in cohort retention.",
-      "Operational Efficiency: Built automations that cut the engineering team's bug resolution SLA by 60%.",
-    ],
+    blurb: "First product hire at a Sequoia-backed devtools startup. Established the company's first sprint planning program to prioritize a backlog of 300+ feature requests, contributing to improved cohort retention. Built automations that cut the engineering team's bug resolution SLA by 60%.",
   },
   {
     company: "LinkedIn",
-    role: "Product Operations Manager",
+    role: "Senior Associate, Product Operations",
     dates: "2020 – 2022",
     location: "San Francisco, CA",
-    bullets: [
-      "Large-Scale Launch: Led strategy to onboard the largest business unit ($6B revenue) to a new sales platform, resulting in a 30% revenue increase with VP approval.",
-      "Cross-Functional Collaboration: Negotiated a phased launch of a joint sales model with Microsoft ($400M forecast), working with the COO and MSFT leadership to accelerate timeline without deprioritizing other workstreams.",
-      "Honors: President's Club Award — top 5% of performers globally.",
-    ],
+    blurb: "Owned the CRM, quoting, and billing platforms powering LinkedIn's sales org. Built platform support to launch a co-sell between the Talent and Learning business units, contributing to LinkedIn crossing $10B in revenue in FY2021. Navigated a last-minute request from sales and Microsoft leadership to ship a $XXXM joint sales motion, launching an MVP without deprioritizing existing commitments. Led the migration strategy for LinkedIn's Talent business unit to the new CRM platform. President's Club Award — top 5% of performers globally.",
   },
   {
     company: "Adobe",
     role: "Solutions Engineer",
     dates: "2017 – 2020",
     location: "San Francisco, CA",
-    bullets: [
-      "Product Impact: Proactively identified an API gap affecting 30% of clients, built the MVP for a fix, and partnered with product management to drive it into the full roadmap.",
-      "Client Impact: Led a retail client engagement yielding $1.2M in marketing savings and $200K in incremental revenue.",
-      "Honors: 2× Sales Achievement Award (top 10% by quota); Adobe Insider Conference Tour Speaker.",
-    ],
+    blurb: "Proactively identified an API gap affecting 30% of clients, built the MVP, and partnered with product to drive it into the full roadmap. 2× Sales Achievement Award winner (top 10% by quota) and Adobe Insider Conference Tour Speaker.",
   },
 ];
 ---
@@ -91,11 +68,10 @@ const jobs = [
             <span class="role">{job.role}</span>
             <span class="dates">{job.dates} · {job.location}</span>
           </div>
-          <ul class="bullets">
-            {job.bullets.map((b) => (
-              <li>{b}</li>
-            ))}
-          </ul>
+          {job.blurbHtml
+            ? <p class="blurb" set:html={job.blurbHtml} />
+            : <p class="blurb">{job.blurb}</p>
+          }
         </li>
       ))}
     </ul>
@@ -168,18 +144,10 @@ const jobs = [
     color: #8a8077;
   }
 
-  .bullets {
+  .blurb {
     margin-top: 8px;
-    list-style: disc;
-    padding-left: 1.2em;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .bullets li {
-    font-size: 0.87rem;
+    font-size: 0.93rem;
     color: #4a4640;
-    line-height: 1.65;
+    line-height: 1.75;
   }
 </style>
