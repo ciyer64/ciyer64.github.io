@@ -13,19 +13,6 @@ const groupProjects = [
     description: "An AI-powered tutoring tool leveraging BERT to answer student questions from course material.",
   },
 ];
-
-const facultyContributions = [
-  {
-    title: "Navigation Assist",
-    url: "https://www.grid.harvard.edu/post/navigation-assistant-for-people-with-impaired-vision-or-blindness",
-    description: "A navigation assistant for people with impaired vision or blindness, developed in collaboration with Harvard GRID.",
-  },
-  {
-    title: "Machine Learning Systems",
-    url: "https://mlsysbook.ai/book/",
-    description: "Contributor to an open-access online textbook on machine learning systems, covering the full stack from hardware to deployment.",
-  },
-];
 ---
 
 <Layout title="Projects">
@@ -33,7 +20,7 @@ const facultyContributions = [
     <h2>Projects</h2>
 
     <section>
-      <h3>Group Projects</h3>
+      <h3>Grad School Group Projects</h3>
       <ul>
         {groupProjects.map((p) => (
           <li>
@@ -47,12 +34,14 @@ const facultyContributions = [
     <section>
       <h3>Faculty Contributions</h3>
       <ul>
-        {facultyContributions.map((p) => (
-          <li>
-            <a href={p.url} target="_blank" rel="noopener">{p.title}</a>
-            <p class="desc">{p.description}</p>
-          </li>
-        ))}
+        <li>
+          <a href="https://www.grid.harvard.edu/post/navigation-assistant-for-people-with-impaired-vision-or-blindness" target="_blank" rel="noopener">Navigation Assist</a>
+          <p class="desc">Collaborator with Professor <a href="https://sladelab.seas.harvard.edu/" target="_blank" rel="noopener">Patrick Slade</a> on a navigation assistant mobile app for people with impaired vision and blindness. Advised on GTM and won a <a href="https://seas.harvard.edu/news/harvard-grid-accelerator-funds-six-projects-science-engineering-global-impact" target="_blank" rel="noopener">$100K grant</a> from the Harvard Grid accelerator.</p>
+        </li>
+        <li>
+          <a href="https://mlsysbook.ai/book/" target="_blank" rel="noopener">Machine Learning Systems</a>
+          <p class="desc">Contributor to an open-access online textbook on machine learning systems, authored by Professor <a href="https://vijay.seas.harvard.edu/" target="_blank" rel="noopener">Vijay Janapa Reddi</a> as part of the <a href="https://tinyml.seas.harvard.edu/" target="_blank" rel="noopener">TinyML Open Education Initiative</a>. Contents include system design, performance optimization, and ML ops and deployment.</p>
+        </li>
       </ul>
     </section>
   </div>
@@ -98,7 +87,7 @@ const facultyContributions = [
     gap: 4px;
   }
 
-  li a {
+  li > a {
     font-size: 1rem;
   }
 
