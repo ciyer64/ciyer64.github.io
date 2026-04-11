@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const groupProjects = [
+  {
+    title: "DawgAI",
+    url: "https://medium.com/@curren.iyer/dawgai-helping-dog-lovers-identify-their-favorite-breeds-9ef54bfb3368",
+    description: "A dog breed identification app using computer vision, built to help dog lovers learn more about the breeds they encounter.",
+  },
+  {
+    title: "BERTutor",
+    url: "https://www.youtube.com/watch?v=7csJEvlgCWM",
+    description: "An AI-powered tutoring tool leveraging BERT to answer student questions from course material.",
+  },
+];
+
+const facultyContributions = [
+  {
+    title: "Navigation Assist",
+    url: "https://www.grid.harvard.edu/post/navigation-assistant-for-people-with-impaired-vision-or-blindness",
+    description: "A navigation assistant for people with impaired vision or blindness, developed in collaboration with Harvard GRID.",
+  },
+  {
+    title: "Machine Learning Systems",
+    url: "https://mlsysbook.ai/book/",
+    description: "Contributor to an open-access online textbook on machine learning systems, covering the full stack from hardware to deployment.",
+  },
+];
+---
+
+<Layout title="Projects">
+  <div class="projects">
+    <h2>Projects</h2>
+
+    <section>
+      <h3>Group Projects</h3>
+      <ul>
+        {groupProjects.map((p) => (
+          <li>
+            <a href={p.url} target="_blank" rel="noopener">{p.title}</a>
+            <p class="desc">{p.description}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h3>Faculty Contributions</h3>
+      <ul>
+        {facultyContributions.map((p) => (
+          <li>
+            <a href={p.url} target="_blank" rel="noopener">{p.title}</a>
+            <p class="desc">{p.description}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8a8077;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  li a {
+    font-size: 1rem;
+  }
+
+  .desc {
+    font-size: 0.93rem;
+    color: #4a4640;
+    line-height: 1.6;
+  }
+</style>
