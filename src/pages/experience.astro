@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 const jobs = [
   {
     company: "Netflix",
-    role: "Product Strategy Manager",
+    role: "Product Strategy",
     dates: "2025 – present",
     location: "San Francisco, CA",
     bullets: [
@@ -27,7 +27,6 @@ const jobs = [
     role: "Venture Capital MBA Intern",
     dates: "Spring 2024",
     location: "Boston, MA",
-    intern: true,
     bullets: [
       "Published research on enterprise Generative AI adoption based on 20+ interviews with tech leaders and enterprise buyers, under Partner Deep Nishar.",
     ],
@@ -37,7 +36,6 @@ const jobs = [
     role: "Business Operations MBA Intern",
     dates: "Summer 2023",
     location: "Los Angeles, CA",
-    intern: true,
     bullets: [
       "GTM Strategy: Redesigned go-to-market strategy for the Starlink Business offering by prioritizing the top three segments by NPS and market size, identifying target customers, and selecting optimal channels.",
       "New Market Launch: Built India market entry plan through prospective user interviews, expert research, and SQL-based pricing analysis of historical usage and customer feedback.",
@@ -49,7 +47,6 @@ const jobs = [
     role: "Product Manager Pre-MBA Intern",
     dates: "Summer 2022",
     location: "New York, NY",
-    intern: true,
     bullets: [
       "Roadmap Ownership: Established the company's first sprint planning program to systematically prioritize a backlog of 300+ feature requests, contributing to a 30% increase in cohort retention.",
       "Operational Efficiency: Built automations that cut the engineering team's bug resolution SLA by 60%.",
@@ -89,7 +86,6 @@ const jobs = [
         <li>
           <div class="header">
             <span class="company">{job.company}</span>
-            {job.intern && <span class="tag">internship</span>}
           </div>
           <div class="meta">
             <span class="role">{job.role}</span>
@@ -182,7 +178,7 @@ const jobs = [
   }
 
   .bullets li {
-    font-size: 0.93rem;
+    font-size: 0.87rem;
     color: #4a4640;
     line-height: 1.65;
   }
